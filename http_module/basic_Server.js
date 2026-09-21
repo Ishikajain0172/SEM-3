@@ -13,9 +13,16 @@ const server = http.createServer((req, res) => {
     }
    // res.statusCode = 200;
    // res.setHeader('Content-Type', 'application/json');
-    res.writeHead(200, {
-        "Content-Type": "application/json", "custom-header": "Hello ECE"
-    }); // only in single thing instead of above two separately
+    import http from 'http';
+    const http = require('http');
+    const server = http.createServer((req, res) => {
+        console.log("Hello World!");
+        res.writeHead(200, {
+            "Content-Type": "text/html", "custom-header": "Hello ECE"       
+    })
+    server.listen(3000, "127.0.0.1", () => {
+        console.log("Server is running ...");
+    }) // only in single thing instead of above two separately
     res.end(JSON.stringify(order));
 })
 
